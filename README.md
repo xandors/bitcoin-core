@@ -28,6 +28,9 @@
 	* [python](#python)
 		* [python head 5 lines](#python-head-5-lines)
 		* [python show all lines](#python-show-all-lines)
+* [IAM terraform](#IAM-terraform)
+	* [IAM terraform base directory](#IAM-terraform-base-directory)
+	* [iam terraform run](#iam-terraform-run)
 
 ## Overview
 
@@ -198,4 +201,19 @@ cd ip-frequency
 #### python show all lines
 ```
 ./ip-frequency.sh ips.txt 0
+```
+
+## IAM terraform
+
+### IAM terraform base directory
+```
+cd iam-terraform
+```
+
+### iam terraform run
+```
+export AWS_PROFILE=default
+export AWS_REGION=us-east-1
+terraform init
+terraform apply
 ```
