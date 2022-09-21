@@ -36,6 +36,9 @@
 	- [K8s terraform](#k8s-terraform)
 		- [K8s terraform base directory](#k8s-terraform-base-directory)
 		- [K8s terraform run](#k8s-terraform-run)
+	- [helm deploy](#helm-deploy)
+		- [helm deploy base directory](#helm-deploy-base-directory)
+		- [K8s terraform run](#k8s-terraform-run-1)
 
 ## Overview
 
@@ -236,4 +239,16 @@ export AWS_PROFILE=default
 export AWS_REGION=us-east-1
 terraform init
 terraform apply
+```
+
+## helm deploy
+
+### helm deploy base directory
+```
+cd helm
+```
+
+### K8s terraform run
+```
+helm upgrade --install bitcoin-core ./bitcoin-core
 ```
