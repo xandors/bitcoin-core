@@ -3,7 +3,7 @@
 ## Table of Contents
 * [Overview](#Overview)
 * [docker](#docker)
-	* [base directory](#base-directory)
+	* [docker base directory](#docker-base-directory)
 	* [build](#build)
 	* [run](#run)
 		* [deamon](#deamon)
@@ -19,6 +19,15 @@
 		* [grype](#grype)
 			* [grype install](#grype-install)
 			* [grype test](#grype-test)
+* [access log](#access-log)
+	* [access log base directory](#access-log-base-directory)
+	* [create sample file](#create-sample-file)
+	* [bash](#bash)
+		* [bash head 5 lines](#bash-head-5-lines)
+		* [bash show all lines](#bash-show-all-lines)
+	* [python](#python)
+		* [python head 5 lines](#python-head-5-lines)
+		* [python show all lines](#python-show-all-lines)
 
 ## Overview
 
@@ -28,7 +37,7 @@ This repo have some resources related to bitcoin core.
 
 Inspired in https://github.com/ruimarinho/docker-bitcoin-core/blob/master/22/Dockerfile
 
-### base directory
+### docker base directory
 ```
 cd docker
 ```
@@ -153,4 +162,40 @@ New version of grype is available: 0.50.2 (currently running: 0.50.1)
  ✔ Cataloged packages      [111 packages]
  ✔ Scanned image           [90 vulnerabilities]
 passed
+```
+
+## access log
+
+### access log base directory
+```
+cd ip-frequency
+```
+
+### create sample file
+```
+./create-file.sh
+```
+
+### bash
+
+#### bash head 5 lines
+```
+./ip-frequency.sh ips.txt 5
+```
+
+#### bash show all lines
+```
+./ip-frequency.sh ips.txt 0
+```
+
+### python
+
+#### python head 5 lines
+```
+./ip-frequency.sh ips.txt 5
+```
+
+#### python show all lines
+```
+./ip-frequency.sh ips.txt 0
 ```
