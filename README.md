@@ -33,6 +33,9 @@
 	- [IAM terraform](#iam-terraform)
 		- [IAM terraform base directory](#iam-terraform-base-directory)
 		- [IAM terraform run](#iam-terraform-run)
+	- [K8s terraform](#k8s-terraform)
+		- [K8s terraform base directory](#k8s-terraform-base-directory)
+		- [K8s terraform run](#k8s-terraform-run)
 
 ## Overview
 
@@ -213,6 +216,21 @@ cd iam-terraform
 ```
 
 ### IAM terraform run
+```
+export AWS_PROFILE=default
+export AWS_REGION=us-east-1
+terraform init
+terraform apply
+```
+
+## K8s terraform
+
+### K8s terraform base directory
+```
+cd iam-terraform
+```
+
+### K8s terraform run
 ```
 export AWS_PROFILE=default
 export AWS_REGION=us-east-1
