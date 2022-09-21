@@ -1,36 +1,38 @@
 # bitcoin-core
 
-## Table of Contents
-* [Overview](#Overview)
-* [docker](#docker)
-	* [docker base directory](#docker-base-directory)
-	* [build](#build)
-	* [run](#run)
-		* [deamon](#deamon)
-		* [long time running](#long-time-running)
-		* [test of long time running](#test-of-long-time-running)
-	* [github docker repository login](#github-docker-repository-login)
-	* [push](#push)
-	* [Security Scan](#Security-Scan)
-		* [anchore](#anchore)
-			* [anchore install](#anchore-install)
-			* [anchore test](#anchore-test)
-			* [anchore evaluate](#anchore-evaluate)
-		* [grype](#grype)
-			* [grype install](#grype-install)
-			* [grype test](#grype-test)
-* [access log](#access-log)
-	* [access log base directory](#access-log-base-directory)
-	* [create sample file](#create-sample-file)
-	* [bash](#bash)
-		* [bash head 5 lines](#bash-head-5-lines)
-		* [bash show all lines](#bash-show-all-lines)
-	* [python](#python)
-		* [python head 5 lines](#python-head-5-lines)
-		* [python show all lines](#python-show-all-lines)
-* [IAM terraform](#IAM-terraform)
-	* [IAM terraform base directory](#IAM-terraform-base-directory)
-	* [iam terraform run](#iam-terraform-run)
+- [bitcoin-core](#bitcoin-core)
+	- [Overview](#overview)
+	- [docker](#docker)
+		- [docker base directory](#docker-base-directory)
+		- [build](#build)
+		- [run](#run)
+			- [deamon](#deamon)
+			- [long time running](#long-time-running)
+			- [test of long time running](#test-of-long-time-running)
+		- [github docker repository login](#github-docker-repository-login)
+		- [push](#push)
+		- [Security Scan](#security-scan)
+			- [anchore](#anchore)
+				- [anchore install](#anchore-install)
+				- [anchore test](#anchore-test)
+				- [anchore evaluate](#anchore-evaluate)
+			- [grype](#grype)
+				- [grype install](#grype-install)
+					- [grype install linux](#grype-install-linux)
+					- [grype install  mac](#grype-install--mac)
+				- [grype test](#grype-test)
+	- [access log](#access-log)
+		- [access log base directory](#access-log-base-directory)
+		- [create sample file](#create-sample-file)
+		- [bash](#bash)
+			- [bash head 5 lines](#bash-head-5-lines)
+			- [bash show all lines](#bash-show-all-lines)
+		- [python](#python)
+			- [python head 5 lines](#python-head-5-lines)
+			- [python show all lines](#python-show-all-lines)
+	- [IAM terraform](#iam-terraform)
+		- [IAM terraform base directory](#iam-terraform-base-directory)
+		- [IAM terraform run](#iam-terraform-run)
 
 ## Overview
 
@@ -128,9 +130,9 @@ anchore-cli evaluate check ghcr.io/xandors/bitcoin-core:latest
 
 ```
 $ anchore-cli image list
-Full Tag                                           Image Digest                                                                   Analysis Status        
-docker.io/library/debian:latest                    sha256:c0508353648d7db3c313661409ca41a2d12c63a4d06007387679161a8372329f        analyzed               
-ghcr.io/xandors/bitcoin-core:latest                sha256:9883efa4ae0bc7f60b479e13d967c2609495aae52d71a102bbc23ec600909856        analyzed               
+Full Tag                                           Image Digest                                                                   Analysis Status
+docker.io/library/debian:latest                    sha256:c0508353648d7db3c313661409ca41a2d12c63a4d06007387679161a8372329f        analyzed
+ghcr.io/xandors/bitcoin-core:latest                sha256:9883efa4ae0bc7f60b479e13d967c2609495aae52d71a102bbc23ec600909856        analyzed
 
 $ anchore-cli evaluate check ghcr.io/xandors/bitcoin-core:latest
 Image Digest: sha256:9883efa4ae0bc7f60b479e13d967c2609495aae52d71a102bbc23ec600909856
@@ -160,8 +162,8 @@ brew install grype
 $ if grype bitcoin-core:latest > /dev/null ; then echo passed ; else echo failed ; fi
  ✔ Vulnerability DB        [updated]
 New version of grype is available: 0.50.2 (currently running: 0.50.1)
- ✔ Loaded image            
- ✔ Parsed image            
+ ✔ Loaded image
+ ✔ Parsed image
  ✔ Cataloged packages      [111 packages]
  ✔ Scanned image           [90 vulnerabilities]
 passed
@@ -210,7 +212,7 @@ cd ip-frequency
 cd iam-terraform
 ```
 
-### iam terraform run
+### IAM terraform run
 ```
 export AWS_PROFILE=default
 export AWS_REGION=us-east-1
