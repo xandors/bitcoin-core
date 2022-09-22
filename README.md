@@ -39,6 +39,7 @@
 	- [helm deploy](#helm-deploy)
 		- [helm deploy base directory](#helm-deploy-base-directory)
 		- [K8s terraform run](#k8s-terraform-run-1)
+	- [CICD](#cicd)
 
 ## Overview
 
@@ -252,3 +253,13 @@ cd helm
 ```
 helm upgrade --install bitcoin-core ./bitcoin-core
 ```
+
+
+## CICD
+
+It will use the Github Actions to:
+
+ - build the docker image
+ - scan the docker image for security test
+ - push the docker images
+ - deploy de docker image using helm in the k8s cluster
