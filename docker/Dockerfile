@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM ubuntu:jammy
 
 ARG TARGETPLATFORM
 ENV BITCOIN_VERSION=22.0
