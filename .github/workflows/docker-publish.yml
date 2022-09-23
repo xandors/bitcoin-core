@@ -6,8 +6,8 @@ name: docker-build-scan-deploy
 # documentation.
 
 on:
-  schedule:
-    - cron: '21 11 * * *'
+  # schedule:
+  #   - cron: '21 11 * * *'
   push:
     branches: [ "main" ]
     # Publish semver tags as releases.
